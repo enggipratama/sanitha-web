@@ -164,7 +164,7 @@ const LevelFive: React.FC = () => {
 
   return (
     <ProtectedLevel level={5}>
-      <main className="h-dvh w-full flex flex-col items-center justify-center bg-[#fbcce1] relative overflow-hidden px-4">
+      <main className="h-dvh w-full flex flex-col items-center justify-center bg-[#1A120B] relative overflow-hidden px-4">
         <style jsx global>{`
           html, body {
             background-color: ${COLORS.BACKGROUND} !important;
@@ -181,7 +181,7 @@ const LevelFive: React.FC = () => {
         </div>
 
         <ShinyText
-          text={isWin ? "Sayang Hebat banget! 😻" : `💖 ${TITLE}`}
+          text={isWin ? "Sayang Hebat banget! 😻" : `${TITLE} ✨`}
           speed={2}
           delay={0}
           color={COLORS.PRIMARY}
@@ -194,19 +194,19 @@ const LevelFive: React.FC = () => {
           className="text-center text-xl sm:text-2xl font-bold mb-1"
         />
 
-        <p className="text-center max-w-md text-gray-700 px-4 text-xs mb-2 font-medium opacity-80">
+        <p className="text-center max-w-md text-[#D5CEA3]/50 px-4 text-sm mb-2 font-medium">
           {isWin ? "Kamu berhasil menangkap kucingnya! 😍" : "Tangkap Kucing dan hindari BOM!"}
         </p>
 
-        <div className="bg-white/40 backdrop-blur-xl p-3 rounded-2xl shadow-2xl border border-white/50 w-full max-w-fit">
-          <p className="text-center text-gray-600 text-xs mb-2 px-2">
+        <div className="bg-[#D5CEA3]/50 backdrop-blur-xl p-3 rounded-2xl shadow-2xl border border-[#D5CEA3]/50 w-full max-w-fit">
+          <p className="text-center text-[#1A120B] text-sm mb-2 px-2">
             <span className="flex justify-center items-center gap-2">
-              Tangkap <FaCat className="text-pink-500" /> dan hindari{" "}
+              Tangkap <FaCat className="text-[#1A120B]" /> dan hindari{" "}
               <FaBomb className="text-gray-700" />
             </span>
           </p>
 
-          <div className="flex gap-4 mb-2 text-xs font-semibold text-pink-600 items-center justify-center">
+          <div className="flex gap-4 mb-2 text-xs text-[#1A120B] items-center justify-center">
             <p>Score: {score}</p>
             <p>Target: {TARGET_SCORE}</p>
 
@@ -221,9 +221,9 @@ const LevelFive: React.FC = () => {
             </div>
           </div>
 
-          <div className="w-full max-w-[240px] h-1.5 bg-pink-100 rounded-full overflow-hidden mb-3 shadow-inner mx-auto">
+          <div className="w-full max-w-[240px] h-1.5 bg-[#D5CEA3]/50 rounded-full overflow-hidden mb-3 shadow-inner mx-auto">
             <div
-              className="h-full bg-pink-500 transition-all duration-1000 ease-linear"
+              className="h-full bg-[#1A120B] transition-all duration-1000 ease-linear"
               style={{ width: `${progressPercent}%` }}
             />
           </div>
@@ -259,24 +259,24 @@ const LevelFive: React.FC = () => {
           {!isPlaying && !isWin && (
             <button
               onClick={startGame}
-              className="px-4 py-2 text-xs font-bold bg-pink-400 text-white rounded-xl shadow-lg hover:bg-pink-500 active:scale-95 transition-all"
-            >
+              className="px-3 py-1.5 text-xs font-bold bg-[#D5CEA3] text-[#3C2A21] rounded-lg shadow-lg hover:bg-[##E5E5CB] hover:scale-110 transition duration-300"
+              >
               Play (Space)
             </button>
           )}
 
           <button
             onClick={resetGame}
-            className="px-4 py-2 text-xs font-bold bg-pink-400 text-white rounded-xl shadow-lg hover:bg-pink-500 active:scale-95 transition-all"
-          >
+            className="px-3 py-1.5 text-xs font-bold bg-[#D5CEA3] text-[#3C2A21] rounded-lg shadow-lg hover:bg-[##E5E5CB] hover:scale-110 transition duration-300"
+            >
             Reset (R)
           </button>
 
           {isWin && (
             <button
               onClick={handleSuccess}
-              className="px-4 py-2 text-xs font-bold bg-pink-500 text-white rounded-xl shadow-lg hover:bg-pink-600 active:scale-95 transition-all animate-bounce"
-            >
+              className="px-3 py-1.5 text-xs font-bold bg-[#D5CEA3] text-[#3C2A21] rounded-lg shadow-lg hover:bg-[##E5E5CB] hover:scale-110 transition duration-300"
+              >
               Continue
             </button>
           )}
@@ -284,8 +284,8 @@ const LevelFive: React.FC = () => {
 
         {showLosePopup && !isWin && (
           <div className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm z-50">
-            <div className="bg-white rounded-2xl shadow-xl p-5 w-[85%] max-w-[260px] text-center animate-scalePulse">
-              <p className="text-lg font-bold text-pink-600 mb-1">
+            <div className="bg-[#D5CEA3]/90 rounded-2xl shadow-xl p-5 w-[85%] max-w-[260px] text-center animate-scalePulse">
+              <p className="text-lg font-bold text-[#3C2A21] mb-1">
                 Kamu Kalah, Cupu!
               </p>
               <p className="text-xs text-gray-600 mb-3 flex justify-center items-center gap-2">
@@ -304,8 +304,8 @@ const LevelFive: React.FC = () => {
               <div className="flex justify-center gap-3">
                 <button
                   onClick={startGame}
-                  className="px-4 py-2 text-xs font-bold bg-pink-400 hover:bg-pink-500 text-white rounded-xl"
-                >
+                  className="px-3 py-1.5 text-xs font-bold text-[#D5CEA3] bg-[#3C2A21]/70 rounded-lg shadow-lg hover:bg-[##E5E5CB] hover:scale-110 transition duration-300"
+            >
                   Play Again
                 </button>
               </div>

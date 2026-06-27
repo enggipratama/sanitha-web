@@ -61,7 +61,7 @@ const SafeBox: React.FC = () => {
 
   return (
     <ProtectedLevel level={7}>
-      <main className="h-dvh w-full flex flex-col items-center justify-center bg-[#fbcce1] relative overflow-hidden px-4">
+      <main className="h-dvh w-full flex flex-col items-center justify-center bg-[#1A120B] relative overflow-hidden px-4">
         <style jsx global>{`
           html, body {
             background-color: ${COLORS.BACKGROUND} !important;
@@ -86,7 +86,7 @@ const SafeBox: React.FC = () => {
         </div>
 
         <ShinyText
-          text={`💖 ${TITLE}`}
+          text={`${TITLE} ✨`}
           speed={2}
           delay={0}
           color={COLORS.PRIMARY}
@@ -99,23 +99,23 @@ const SafeBox: React.FC = () => {
           className="text-center text-xl sm:text-2xl font-bold mb-1"
         />
 
-        <p className="text-center max-w-md text-gray-700 px-4 text-xs mb-3 font-medium opacity-80">
+        <p className="text-center max-w-md text-[#D5CEA3]/50 px-4 text-sm mb-3 font-medium">
           Clue: Berhubungan dengan aku wleee!
         </p>
 
         <div
-          className={`bg-white p-3 rounded-2xl border-4 ${error ? "border-pink-500 animate-shake" : "border-pink-300"} shadow-xl w-full max-w-[260px]`}
+          className={`bg-[#D5CEA3]/50 p-3 rounded-2xl border-4 ${error ? "border-[#D5CEA3] animate-shake" : "border-[#D5CEA3]/50"} shadow-xl w-full max-w-[260px]`}
         >
-          <div className="bg-pink-50 p-3 rounded-xl mb-3 border-2 border-pink-200 flex justify-center gap-2">
+          <div className="bg-[#D5CEA3]/50 p-3 rounded-xl mb-3 border-2 border-[#D5CEA3] flex justify-center gap-2">
             {[...Array(PIN_LENGTH)].map((_, i) => (
               <div
                 key={i}
-                className={`w-3.5 h-3.5 rounded-full transition-all duration-300 ${pin.length > i ? "bg-pink-500 scale-110" : "bg-pink-200"}`}
+                className={`w-3.5 h-3.5 rounded-full transition-all duration-300 ${pin.length > i ? "bg-[#1A120B] scale-110" : "bg-[#D5CEA3]"}`}
                 aria-label={pin.length > i ? "PIN digit entered" : "PIN digit empty"}
               />
             ))}
           </div>
-          <p className="text-center text-pink-400 text-xs mb-3">
+          <p className="text-center text-[#D5CEA3] text-xs mb-3">
             {error
               ? "Salah mulu luuu cupu!"
               : "Masukkan PIN 4 digit"}
@@ -127,7 +127,7 @@ const SafeBox: React.FC = () => {
                 <button
                   key={num}
                   onClick={() => handleKeyPress(num.toString())}
-                  className="w-12 h-12 bg-white hover:bg-pink-100 active:scale-95 text-pink-600 text-lg font-bold rounded-xl transition-all border-2 border-pink-200 shadow-sm"
+                  className="w-12 h-12 bg-[#D5CEA3] hover:bg-[#D5CEA3]/40 active:scale-75 text-[#1A120B] text-lg font-bold rounded-xl transition-all border-2 border-[#D5CEA3] shadow-sm"
                   aria-label={`Number ${num}`}
                 >
                   {num}
@@ -136,28 +136,28 @@ const SafeBox: React.FC = () => {
 
               <button
                 onClick={clearPin}
-                className="w-12 h-12 bg-pink-400 hover:bg-pink-100 active:scale-95 text-pink-100 hover:text-pink-400 font-bold rounded-xl border-2 border-pink-200 shadow-sm flex items-center justify-center transition-colors"
+                className="w-12 h-12 bg-[#D5CEA3] hover:bg-[#D5CEA3]/40 active:scale-75 text-[#1A120B] hover:text-[#D5CEA3]/40 font-bold rounded-xl border-2 border-[#D5CEA3] shadow-sm flex items-center justify-center transition-colors"
                 aria-label="Clear"
               >
-                <RiDeleteBack2Fill className="text-lg" />
+                <RiDeleteBack2Fill className="text-lg text-[#1A120B]" />
               </button>
 
               <button
                 onClick={() => handleKeyPress("0")}
-                className="w-12 h-12 bg-white hover:bg-pink-100 active:scale-95 text-pink-600 text-lg font-bold rounded-xl border-2 border-pink-200 shadow-sm"
-                aria-label="Number 0"
+                className="w-12 h-12 bg-[#D5CEA3] hover:bg-[#D5CEA3]/40 active:scale-75 text-[#1A120B] text-lg font-bold rounded-xl transition-all border-2 border-[#D5CEA3] shadow-sm"
+                  aria-label="Number 0"
               >
                 0
               </button>
 
-              <div className="w-12 h-12 font-bold text-pink-400 flex items-center justify-center text-xl">
+              <div className="w-12 h-12 font-bold text-[#D5CEA3] flex items-center justify-center text-xl">
                 <FaHeart />
               </div>
             </div>
           </div>
         </div>
 
-        <p className="text-center text-gray-500 text-xs mt-3">
+        <p className="text-center text-[#D5CEA3] text-xs mt-3">
           Tekan angka keyboard atau klik tombol
         </p>
       </main>

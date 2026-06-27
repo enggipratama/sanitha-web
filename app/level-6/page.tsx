@@ -245,7 +245,7 @@ const LevelSix: React.FC = () => {
 
   return (
     <ProtectedLevel level={6}>
-      <main className="h-dvh w-full flex flex-col items-center justify-center bg-[#fbcce1] relative overflow-hidden px-4">
+      <main className="h-dvh w-full flex flex-col items-center justify-center bg-[#1A120B] relative overflow-hidden px-4">
         <style jsx global>{`
           html, body {
             background-color: ${COLORS.BACKGROUND} !important;
@@ -262,7 +262,7 @@ const LevelSix: React.FC = () => {
         </div>
 
         <ShinyText
-          text={isWin ? "Pintar banget sih kamu 💖" : `💖 ${TITLE}`}
+          text={isWin ? "Pintar banget sih kamu 💖" : `${TITLE} ✨`}
           speed={2}
           delay={0}
           color={COLORS.PRIMARY}
@@ -275,19 +275,19 @@ const LevelSix: React.FC = () => {
           className="text-center text-xl sm:text-2xl font-bold mb-1"
         />
 
-        <p className="text-center max-w-md text-gray-700 px-4 text-xs mb-2 font-medium opacity-80">
+        <p className="text-center max-w-md text-[#D5CEA3]/50 px-4 text-xs mb-2 font-medium">
           {isWin ? "Kamu berhasil menyusun semua kata cinta ❤️" : `Susun huruf menjadi kata yang benar! (${level + 1}/${shuffledWords.length})`}
         </p>
 
-        <div className="flex gap-4 mb-2 text-xs font-semibold text-pink-600 items-center">
+        <div className="flex gap-4 mb-2 text-xs font-semibold text-[#D5CEA3]/50 items-center">
           <p>Time: {timeLeft}s</p>
           <p>
             Word: {level + 1}/{shuffledWords.length}
           </p>
         </div>
-        <div className="w-full max-w-[260px] h-1.5 bg-pink-100 rounded-full overflow-hidden mb-3 shadow-inner">
+        <div className="w-full max-w-[260px] h-1.5 bg-[#D5CEA3]/50 rounded-full overflow-hidden mb-3 shadow-inner">
           <div
-            className="h-full bg-pink-500 transition-all duration-1000 ease-linear"
+            className="h-full bg-[#D5CEA3]/90 transition-all duration-1000 ease-linear"
             style={{ width: `${progressPercent}%` }}
           />
         </div>
@@ -305,7 +305,7 @@ const LevelSix: React.FC = () => {
               className={`w-9 h-9 rounded-lg border-2 flex items-center justify-center text-base font-bold ${
                 input[i]
                   ? "bg-green-200 border-green-400"
-                  : "bg-white border-pink-300"
+                  : "bg-[#D5CEA3] border-[#D5CEA3]/90"
               } ${isBlocked ? "opacity-50 cursor-not-allowed" : ""}`}
               aria-label={`Remove letter ${i + 1}`}
             >
@@ -314,7 +314,7 @@ const LevelSix: React.FC = () => {
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-2 justify-center bg-white/40 p-3 rounded-2xl shadow-2xl mb-3 max-w-[280px]">
+        <div className="flex flex-wrap gap-2 justify-center bg-[#D5CEA3]/50 p-3 rounded-2xl shadow-2xl mb-3 max-w-[280px]">
           {letterStates.map((letterState, index) => (
             <button
               key={index}
@@ -322,10 +322,10 @@ const LevelSix: React.FC = () => {
               disabled={letterState.used || isBlocked}
               className={`w-10 h-10 rounded-lg font-bold text-base shadow-md transition-all ${
                 letterState.used
-                  ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                  ? "bg-[#D5CEA3]/40 text-[#1A120B]/70 cursor-not-allowed"
                   : isBlocked
-                    ? "bg-pink-100 text-pink-300 cursor-not-allowed"
-                    : "bg-pink-200 hover:bg-pink-300 text-gray-800"
+                    ? "bg-[#1A120B]/70 cursor-not-allowed"
+                    : "bg-[#1A120B] hover:bg-[#1A120B]/70 text-[#D5CEA3]/40"
               }`}
               aria-label={`Letter ${letterState.letter}${letterState.used ? " (used)" : ""}`}
             >
@@ -338,10 +338,10 @@ const LevelSix: React.FC = () => {
           <button
             onClick={isWin ? resetFullGame : resetAnswerOnly}
             disabled={isBlocked}
-            className={`px-4 py-2 text-xs font-bold text-white rounded-xl ${
+            className={`px-4 py-2 text-xs font-bold text-[#1A120B] rounded-xl ${
               isBlocked
-                ? "bg-gray-400 cursor-not-allowed"
-                : "bg-pink-400 hover:bg-pink-500"
+                ? "bg-[#D5CEA3] cursor-not-allowed"
+                : "bg-[#D5CEA3] hover:scale-110 transition duration-300"
             }`}
           >
             {isWin ? "Play Again" : "Reset Jawaban (R)"}
@@ -350,8 +350,8 @@ const LevelSix: React.FC = () => {
           {isWin && (
             <button
               onClick={handleSuccess}
-              className="px-4 py-2 text-xs font-bold bg-pink-500 hover:bg-pink-600 text-white rounded-xl animate-bounce"
-            >
+              className="px-3 py-1.5 text-xs font-bold text-[#D5CEA3] bg-[#3C2A21]/70 rounded-lg shadow-lg hover:bg-[##E5E5CB] hover:scale-110 transition duration-300"
+                >
               Continue
             </button>
           )}
@@ -359,8 +359,8 @@ const LevelSix: React.FC = () => {
 
         {showLosePopup && !isWin && (
           <div className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm z-50">
-            <div className="bg-white rounded-2xl shadow-xl p-5 w-[85%] max-w-[260px] text-center animate-scalePulse">
-              <p className="text-lg font-bold text-pink-600 mb-1">
+            <div className="bg-[#D5CEA3]/90 rounded-2xl shadow-xl p-5 w-[85%] max-w-[260px] text-center animate-scalePulse">
+              <p className="text-lg font-bold text-[#3C2A21] mb-1">
                 Kamu Kalah, Cupu!
               </p>
               <p className="text-xs text-gray-600 mb-3">
@@ -368,8 +368,8 @@ const LevelSix: React.FC = () => {
               </p>
               <button
                 onClick={resetFullGame}
-                className="px-4 py-2 text-xs font-bold bg-pink-400 hover:bg-pink-500 text-white rounded-xl"
-              >
+                className="px-3 py-1.5 text-xs font-bold text-[#D5CEA3] bg-[#3C2A21]/70 rounded-lg shadow-lg hover:bg-[##E5E5CB] hover:scale-110 transition duration-300"
+                >
                 Play Again
               </button>
             </div>

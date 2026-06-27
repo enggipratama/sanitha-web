@@ -2,9 +2,10 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import Lottie from "lottie-react";
+// import Lottie from "lottie-react";
+import Image from "next/image";
 
-import cat from "@/public/cat/count.json";
+import cat from "@/public/cat/awal.png";
 import ShinyText from "@/components/ShinyText";
 
 interface Props {
@@ -103,7 +104,7 @@ export default function CountdownGuard({
     const hours = Math.floor((ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((ms % (1000 * 60)) / 1000);
-    return `${days}D ${hours}H ${minutes}m ${seconds}s`;
+    return `${days}D ${hours}H ${minutes}M ${seconds}S`;
   };
 
   const getDateText = (dateString: string) => {
@@ -120,23 +121,29 @@ export default function CountdownGuard({
 
   if (blockAccess && !redirectReady) {
     return (
-      <div className="fixed inset-0 z-[60] flex items-center justify-center bg-[#fbcce1] px-4">
+      <div className="fixed inset-0 z-[60] flex items-center justify-center bg-[#1A120B] px-4">
         {!isFinalMode && (
           <div className="relative z-10 flex flex-col items-center justify-center">
-            <div className="h-30 w-30 sm:h-40 sm:w-40">
-              <Lottie animationData={cat} loop autoplay />
-            </div>
+            <div className="relative w-[70vw] max-w-[320px] aspect-[1081/648]">
+  <Image
+    src={cat}
+    alt="Couple"
+    fill
+    className="object-contain"
+    priority
+  />
+</div>
             <ShinyText
               text="Tunggu dulu Yaa..."
               speed={2}
-              color="#e60076"
-              shineColor="#ffd0e1"
-              className="mb-2 text-center text-2xl font-bold sm:text-4xl"
+              color="#D5CEA3"
+              shineColor="#E5E5CB"
+              className="mb-2 text-center text-xl font-bold sm:text-2xl"
             />
-            <div className="rounded-xl bg-gradient-to-r from-pink-400 via-rose-300 to-pink-500 px-6 py-2 font-mono text-2xl tracking-wide text-white shadow-xl sm:text-3xl">
+            <div className="rounded-xl bg-gradient-to-r from-[#3C2A21] to-[#3C2A21] px-6 py-1 font-mono text-xl tracking-wide text-white shadow-xl sm:text-2xl">
               {formatTime(timeLeft)}
             </div>
-            <div className="mt-4 rounded-full bg-white/30 px-4 py-1 text-sm font-semibold text-pink-600 sm:text-base">
+            <div className="mt-2 rounded-full bg-[#3C2A21]/70 px-4 py-1 text-xs font-semibold text-[#D5CEA3] sm:text-sm">
               Hari Spesial: <strong>{getDateText(targetDate)} 🎉</strong>
             </div>
           </div>
@@ -144,7 +151,7 @@ export default function CountdownGuard({
 
         {showCurtain && (
           <div
-            className={`fixed inset-0 z-40 bg-[#fbcce1] ${
+            className={`fixed inset-0 z-40 bg-[#3C2A21]/70 ${
               curtainOpening ? "animate-curtainUp" : "animate-curtainDown"
             }`}
           />
@@ -154,7 +161,7 @@ export default function CountdownGuard({
           <div className="pointer-events-none fixed inset-0 z-50 flex items-center justify-center">
             <div
               key={finalSeconds}
-              className="animate-heartBeat text-8xl font-extrabold text-pink-400 drop-shadow-xl sm:text-9xl"
+              className="animate-heartBeat text-8xl font-extrabold text-[#E5E5CB] drop-shadow-xl sm:text-9xl"
             >
               {finalSeconds}
             </div>

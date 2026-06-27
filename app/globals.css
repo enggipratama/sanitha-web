@@ -23,7 +23,8 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #fbcce1;
+  background-color: #040D12;
+  /* background-color: #fbcce1; */
 
   overscroll-behavior: none;
 

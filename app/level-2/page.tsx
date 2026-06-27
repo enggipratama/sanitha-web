@@ -112,7 +112,7 @@ const LevelTwo: React.FC = () => {
 
   return (
     <ProtectedLevel level={2}>
-      <main className="h-dvh w-full flex flex-col items-center justify-center bg-[#fbcce1] relative px-4 overflow-hidden">
+      <main className="h-dvh w-full flex flex-col items-center justify-center bg-[#1A120B] relative px-4 overflow-hidden">
         <style jsx global>{`
           html, body {
             background-color: ${COLORS.BACKGROUND} !important;
@@ -129,7 +129,7 @@ const LevelTwo: React.FC = () => {
         </div>
 
         <ShinyText
-          text={isGameWon ? "You Won! ❤️" : `💖 ${TITLE}`}
+          text={isGameWon ? "You Won! ❤️" : `${TITLE} ✨`}
           speed={2}
           delay={0}
           color={COLORS.PRIMARY}
@@ -142,11 +142,11 @@ const LevelTwo: React.FC = () => {
           className="text-center text-lg sm:text-xl font-bold mb-1"
         />
 
-        <p className="text-center max-w-md text-gray-700 px-4 text-[10px] sm:text-xs mb-2 font-medium opacity-80">
-          {isGameWon ? "Yeay! Kamu hebat banget! 😍" : "Cari pasangan foto kita!"}
+        <p className="text-center max-w-md text-[#D5CEA3]/50 px-4 text-sm sm:text-sm mb-2 font-medium">
+          {isGameWon ? "Yeay! Kamu hebat banget! 😍" : "Cari pasangan foto kita !"}
         </p>
 
-        <div className="bg-white/40 backdrop-blur-xl p-2 sm:p-3 rounded-2xl shadow-2xl border border-white/50">
+        <div className="bg-[#D5CEA3]/50 backdrop-blur-xl p-2 sm:p-3 rounded-2xl shadow-2xl border border-[#E5E5CB]/40">
           <div className="grid grid-cols-4 gap-1 sm:gap-1.5 justify-items-center">
             {cards.map((card, index) => (
                <div
@@ -163,13 +163,13 @@ const LevelTwo: React.FC = () => {
                    }}
                  >
                    <div 
-                     className="absolute inset-0 bg-pink-500 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg border-2 border-white/40"
+                     className="absolute inset-0 bg-[#1A120B]/70 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg border-2 border-[#E5E5CB]/60"
                      style={{ backfaceVisibility: "hidden" }}
                    >
-                     <span className="text-white text-base sm:text-lg font-bold">{index + 1}</span>
+                     <span className="text-[#E5E5CB] text-base sm:text-lg font-bold">{index + 1}</span>
                    </div>
                    <div 
-                     className="absolute inset-0 bg-white rounded-lg sm:rounded-xl overflow-hidden border-2 border-pink-400 shadow-inner"
+                     className="absolute inset-0 bg-[#E5E5CB] rounded-lg sm:rounded-xl overflow-hidden border-2 border-[#E5E5CB]/60 shadow-inner"
                      style={{ 
                        backfaceVisibility: "hidden",
                        transform: "rotateY(180deg)"
@@ -194,7 +194,7 @@ const LevelTwo: React.FC = () => {
           </div>
 
           <div className="mt-1.5 text-center">
-            <span className="bg-pink-500/20 text-pink-700 px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest">
+            <span className="bg-[#1A120B]/40 text-[#E5E5CB] px-2 py-0.5 rounded-full text-[10px] uppercase tracking-widest">
               Moves: {moves}
             </span>
           </div>
@@ -203,7 +203,7 @@ const LevelTwo: React.FC = () => {
         <div className="flex gap-2 mt-2">
           <button
             onClick={initializeGame}
-            className="px-3 py-1.5 text-xs font-bold bg-pink-400 text-white rounded-lg shadow-lg hover:bg-pink-500 active:scale-95 transition-all"
+            className="px-3 py-1.5 text-xs font-bold bg-[#D5CEA3] text-[#3C2A21] rounded-lg shadow-lg hover:bg-[##E5E5CB] hover:scale-110 transition duration-300"
           >
             Reset (R)
           </button>
@@ -211,7 +211,7 @@ const LevelTwo: React.FC = () => {
           {isGameWon && (
             <button
               onClick={handleSuccess}
-              className="px-3 py-1.5 text-xs font-bold bg-pink-500 text-white rounded-lg shadow-lg hover:bg-pink-600 active:scale-95 transition-all animate-bounce"
+              className="px-3 py-1.5 text-xs font-bold bg-[#D5CEA3] text-[#3C2A21] rounded-lg shadow-lg hover:bg-[##E5E5CB] hover:scale-110 transition duration-300"
             >
               Continue
             </button>

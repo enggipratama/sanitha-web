@@ -80,7 +80,7 @@ export default function FlipbookModal({ pages }: Props) {
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden bg-[#fbcce1] bg-opacity-80 p-6" style={{ overscrollBehavior: 'none', touchAction: 'pan-y' }}>
+        <div className="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden bg-[#1A120B] bg-opacity-80 p-6" style={{ overscrollBehavior: 'none', touchAction: 'pan-y' }}>
           {mounted && (
             <Confetti
               numberOfPieces={confettiConfig.numberOfPieces}
@@ -91,7 +91,7 @@ export default function FlipbookModal({ pages }: Props) {
           )}
           <button
             onClick={() => setIsOpen(false)}
-            className="fixed top-5 right-5 text-pink-500 text-3xl font-bold z-50 hover:text-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-300 rounded"
+            className="fixed top-5 right-5 text-[#D5CEA3] text-3xl font-bold z-50 hover:text-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-300 rounded"
             aria-label="Tutup"
           >
             &times;
@@ -117,7 +117,7 @@ export default function FlipbookModal({ pages }: Props) {
               />
             </div>
 
-            <p className="text-gray-700 text-sm sm:text-lg font-medium opacity-80 mb-6 text-center">
+            <p className="text-[#D5CEA3]/50 text-sm sm:text-lg font-medium mb-6 text-center">
               &quot;Slide ya sayangg...&quot;
             </p>
 
@@ -139,7 +139,7 @@ export default function FlipbookModal({ pages }: Props) {
                 {pages.map((img, index) => (
                   <div
                     key={index}
-                    className="relative flex justify-center items-center bg-pink-300 shadow-md rounded-lg overflow-hidden"
+                    className="relative flex justify-center items-center bg-[#D5CEA3]/50 shadow-md rounded-lg overflow-hidden"
                     style={{ width: "100%", height: "100%" }}
                   >
                     <FlipbookPage src={img} index={index} />
@@ -148,11 +148,11 @@ export default function FlipbookModal({ pages }: Props) {
               </HTMLFlipBook>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl text-gray-700 shadow-lg border-t-5 border-pink-400 w-full relative mb-10 overflow-visible">
+            <div className="bg-[#D5CEA3] p-6 rounded-2xl text-[#1A120B]/70 shadow-lg border-t-5 border-[#3C2A21]/50 w-full relative mb-10 overflow-visible">
               <div className="absolute -top-3 right-2 w-10 h-10 rotate-12 z-10">
                 <Lottie animationData={cat} loop autoplay />
               </div>
-              <h3 className="text-lg font-bold text-pink-600 mb-2">
+              <h3 className="text-lg font-bold text-[#3C2A21] mb-2">
                 Selamat Menua! 🎂 🎉
               </h3>
               <div className="text-sm leading-relaxed italic">
@@ -166,8 +166,8 @@ export default function FlipbookModal({ pages }: Props) {
                   cursorCharacter="_"
                 />
               </div>
-              <p className="mt-4 font-bold text-pink-500">
-                - Your Favorite Boy -
+              <p className="mt-4 font-bold text-[#3C2A21]">
+                - Sanitha -
               </p>
             </div>
           </div>

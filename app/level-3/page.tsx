@@ -84,7 +84,7 @@ const LevelThree: React.FC = () => {
 
   return (
     <ProtectedLevel level={3}>
-      <main className="h-dvh w-full flex flex-col items-center justify-center bg-[#fbcce1] relative overflow-hidden px-4">
+      <main className="h-dvh w-full flex flex-col items-center justify-center bg-[#1A120B] relative overflow-hidden px-4">
         <style jsx global>{`
           html, body {
             background-color: ${COLORS.BACKGROUND} !important;
@@ -101,7 +101,7 @@ const LevelThree: React.FC = () => {
         </div>
 
         <ShinyText
-          text={isGameWon ? "Yeeyy kamu nemuin aku! ❤️" : `💖 ${TITLE}`}
+          text={isGameWon ? "Yeeyy kamu nemuin aku! ❤️" : `${TITLE} ✨`}
           speed={2}
           delay={0}
           color={COLORS.PRIMARY}
@@ -114,11 +114,11 @@ const LevelThree: React.FC = () => {
           className="text-center text-xl sm:text-2xl font-bold mb-1"
         />
 
-        <p className="text-center max-w-md text-gray-700 px-4 text-xs mb-2 font-medium opacity-80">
+        <p className="text-center max-w-md text-[#D5CEA3]/50 px-4 text-sm mb-2 font-medium">
           {isGameWon ? "Kamu berhasil menemukan aku! 🎉" : "Gunakan WASD atau tombol panah untuk bertemu!"}
         </p>
 
-        <div className="bg-white/40 backdrop-blur-md p-2 rounded-2xl shadow-2xl border border-white/50 mb-2">
+        <div className="bg-[#D5CEA3]/50 backdrop-blur-md p-2 rounded-2xl shadow-2xl border border-[#E5E5CB]/40 mb-2">
           <div
             className="grid gap-0.5"
             style={{
@@ -132,16 +132,16 @@ const LevelThree: React.FC = () => {
                 <div
                   key={`${x}-${y}`}
                   className={`relative rounded-sm transition-all duration-200 ${
-                    cell === 1 ? "bg-pink-400 shadow-inner" : "bg-white/50"
+                    cell === 1 ? "bg-[#1A120B]/70 shadow-inner" : "bg-[#D5CEA3]/50"
                   }`}
                 >
                   {playerPos.x === x && playerPos.y === y && (
                     <div className="absolute inset-0 flex items-center justify-center text-lg">
                       <Image
-                        src="/images/1.jpeg"
+                        src="/images/1.png"
                         alt="Player"
                         fill
-                        className="rounded-full border border-pink-300 object-cover"
+                        className="rounded-full border border-[#1A120B] object-cover"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           target.style.display = "none";
@@ -152,10 +152,10 @@ const LevelThree: React.FC = () => {
                   {TARGET_POS.x === x && TARGET_POS.y === y && (
                     <div className="absolute inset-0 flex items-center justify-center">
                       <Image
-                        src="/images/5.jpeg"
+                        src="/images/5.png"
                         alt="Target"
                         fill
-                        className="rounded-full border border-pink-400 object-cover"
+                        className="rounded-full border border-[#1A120B] object-cover"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           target.style.display = "none";
@@ -174,32 +174,32 @@ const LevelThree: React.FC = () => {
             <div />
             <button
               onClick={() => movePlayer(0, -1)}
-              className="p-3 bg-white/60 rounded-lg shadow active:bg-pink-200"
+              className="p-3 bg-[#D5CEA3]/50 rounded-lg shadow active:bg-[#E5E5CB]/20"
               aria-label="Move up"
             >
-              <FaChevronCircleUp className="text-pink-400 text-sm" />
+              <FaChevronCircleUp className="text-[#D5CEA3] text-sm" />
             </button>
             <div />
             <button
               onClick={() => movePlayer(-1, 0)}
-              className="p-3 bg-white/60 rounded-lg shadow active:bg-pink-200"
+              className="p-3 bg-[#D5CEA3]/50 rounded-lg shadow active:bg-[#E5E5CB]/20"
               aria-label="Move left"
             >
-              <FaChevronCircleLeft className="text-pink-400 text-sm" />
+              <FaChevronCircleLeft className="text-[#D5CEA3] text-sm" />
             </button>
             <button
               onClick={() => movePlayer(0, 1)}
-              className="p-3 bg-white/60 rounded-lg shadow active:bg-pink-200"
+              className="p-3 bg-[#D5CEA3]/50 rounded-lg shadow active:bg-[#E5E5CB]/20"
               aria-label="Move down"
             >
-              <FaChevronCircleDown className="text-pink-400 text-sm" />
+              <FaChevronCircleDown className="text-[#D5CEA3] text-sm" />
             </button>
             <button
               onClick={() => movePlayer(1, 0)}
-              className="p-3 bg-white/60 rounded-lg shadow active:bg-pink-200"
+              className="p-3 bg-[#D5CEA3]/50 rounded-lg shadow active:bg-[#E5E5CB]/20"
               aria-label="Move right"
             >
-              <FaChevronCircleRight className="text-pink-400 text-sm" />
+              <FaChevronCircleRight className="text-[#D5CEA3] text-sm" />
             </button>
           </div>
         )}
@@ -208,7 +208,7 @@ const LevelThree: React.FC = () => {
           <div className="flex gap-3 flex-wrap justify-center mt-3">
             <button
               onClick={handleSuccess}
-              className="px-4 py-2 text-xs font-bold bg-pink-500 hover:bg-pink-600 text-white rounded-xl animate-bounce"
+              className="px-3 py-1.5 text-xs font-bold bg-[#D5CEA3] text-[#3C2A21] rounded-lg shadow-lg hover:bg-[##E5E5CB] hover:scale-110 transition duration-300"
             >
               Continue
             </button>

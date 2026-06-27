@@ -40,7 +40,7 @@ export default function Page() {
   }, [router]);
 
   return (
-    <main className="h-dvh w-full flex flex-col items-center justify-center bg-[#fbcce1] relative overflow-hidden px-4">
+    <main className="h-dvh w-full flex flex-col items-center justify-center bg-[#1A120B] relative overflow-hidden px-4">
       {mounted && (
         <Confetti
           numberOfPieces={confettiConfig.numberOfPieces}
@@ -65,7 +65,7 @@ export default function Page() {
         disabled={false}
         className="text-center text-lg sm:text-xl font-bold mb-2 mx-4"
       />
-      <p className="text-gray-700 text-sm font-medium opacity-80 mb-2">
+      <p className="text-[#D5CEA3]/50 text-sm font-medium opacity-80 mb-2">
         &quot;Klik Giftnya ya sayang&quot;
       </p>
       <div className="text-center max-w-md text-gray-600 px-4">

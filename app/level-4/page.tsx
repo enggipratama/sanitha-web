@@ -8,14 +8,14 @@ import Confetti from "react-confetti";
 import ProtectedLevel from "@/components/ProtectedLevel";
 import ShinyText from "@/components/ShinyText";
 import { setLevelCompleted } from "@/utils/progress";
-import { COLORS } from "@/constants/game";
+import { GAME_CONFIG, COLORS } from "@/constants/game";
 
 interface PuzzlePiece {
   id: number;
   currentPos: number;
   correctPos: number;
 }
-
+const { TITLE } = GAME_CONFIG.LEVEL_3;
 const GRID_SIZE = 3;
 const TOTAL_PIECES = GRID_SIZE * GRID_SIZE;
 const PHOTO_URL = "/images/we.jpeg";
@@ -111,7 +111,7 @@ const LevelFour: React.FC = () => {
 
   return (
     <ProtectedLevel level={4}>
-      <main className="h-dvh w-full flex flex-col items-center justify-center bg-[#fbcce1] relative overflow-hidden px-4">
+      <main className="h-dvh w-full flex flex-col items-center justify-center bg-[#1A120B] relative overflow-hidden px-4">
         {isSolved && (
           <Confetti
             width={windowSize.width}
@@ -147,7 +147,7 @@ const LevelFour: React.FC = () => {
         </div>
 
         <ShinyText
-          text={isSolved ? "Pintar banget siii! ❤️" : "💖 Level 4 — Puzzle"}
+          text={isSolved ? "Pintar banget siii! ❤️" : `${TITLE} ✨`}
           speed={2}
           delay={0}
           color={COLORS.PRIMARY}
@@ -160,14 +160,14 @@ const LevelFour: React.FC = () => {
           className="text-center text-xl sm:text-2xl font-bold mb-1"
         />
 
-        <p className="text-center max-w-md text-gray-700 px-4 text-xs mb-2 font-medium opacity-80">
+        <p className="text-center max-w-md text-[#D5CEA3]/50 px-4 text-sm mb-2 font-medium opacity-80">
           {isSolved
             ? "Kamu berhasil menyatukan kepingan kenangan kita! 😍"
             : "Klik dua kotak untuk menukar posisinya hingga fotonya benar."}
         </p>
 
         <div
-          className="grid gap-0.5 bg-white/40 p-2 rounded-2xl shadow-2xl"
+          className="grid gap-0.5 bg-[#D5CEA3]/50 p-2 rounded-2xl shadow-2xl border border-[#E5E5CB]/40 mb-2"
           style={{
             gridTemplateColumns: `repeat(${GRID_SIZE}, 1fr)`,
             width: "min(75vw, 260px)",
@@ -185,7 +185,7 @@ const LevelFour: React.FC = () => {
                 onClick={() => handlePieceClick(index)}
                 className={`relative cursor-pointer overflow-hidden rounded-md transition-all duration-300 ${
                   selectedPiece === index
-                    ? "ring-2 ring-pink-500 scale-95 z-10"
+                    ? "ring-2 ring-[#E5E5CB]/40 scale-85 z-10"
                     : "hover:opacity-90"
                 } ${isSolved ? "ring-0" : ""}`}
                 style={{
@@ -208,7 +208,7 @@ const LevelFour: React.FC = () => {
           {!isSolved && (
             <button
               onClick={shufflePuzzle}
-              className="px-4 py-2 text-xs font-bold bg-pink-400 hover:bg-pink-500 text-white rounded-xl"
+              className="px-3 py-1.5 text-xs font-bold bg-[#D5CEA3] text-[#3C2A21] rounded-lg shadow-lg hover:bg-[##E5E5CB] hover:scale-110 transition duration-300"
             >
               Reset (R)
             </button>
@@ -216,7 +216,7 @@ const LevelFour: React.FC = () => {
           {isSolved && (
             <button
               onClick={handleSuccess}
-              className="px-6 py-2 text-xs font-bold bg-pink-500 hover:bg-pink-600 text-white rounded-xl animate-bounce"
+              className="px-3 py-1.5 text-xs font-bold bg-[#D5CEA3] text-[#3C2A21] rounded-lg shadow-lg hover:bg-[##E5E5CB] hover:scale-110 transition duration-300"
             >
               Continue
             </button>

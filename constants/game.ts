@@ -1,16 +1,16 @@
 export const GAME_CONFIG = {
   LEVEL_1: {
-    CORRECT_ANSWER: "2024-11-11",
-    TITLE: "Level 1 — Beginning",
+    CORRECT_ANSWER: "2026-03-23",
+    TITLE: "Level 1 — Starting Point",
   },
   LEVEL_2: {
     CARD_IMAGES: [
-      "/images/1.jpeg",
-      "/images/2.jpeg",
-      "/images/3.jpeg",
-      "/images/4.jpeg",
-      "/images/5.jpeg",
-      "/images/6.jpeg",
+      "/images/1.png",
+      "/images/2.png",
+      "/images/3.png",
+      "/images/4.png",
+      "/images/5.png",
+      "/images/6.png",
     ],
     TITLE: "Level 2 — The Memory",
   },
@@ -86,7 +86,7 @@ export const ANIMATION_CONFIG = {
 };
 
 export const COLORS = {
-  PRIMARY: "#e60076",
-  SHINE: "#ffd0e1",
-  BACKGROUND: "#fbcce1",
+  PRIMARY: "#D5CEA3",
+  SHINE: "#E5E5CB",
+  BACKGROUND: "#1A120B",
 };

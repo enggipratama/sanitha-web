@@ -83,7 +83,7 @@ const MusicPlayer: React.FC = () => {
       {!isLoading && (
         <button
           onClick={togglePlay}
-          className="bg-pink-500 hover:bg-pink-600 text-white w-12 h-12 rounded-full flex items-center justify-center transition-all active:scale-95 shadow-lg border-2 border-white/50"
+          className="bg-[#D5CEA3] hover:bg-[#E5E5CB] text-[#3C2A21] w-12 h-12 rounded-full flex items-center justify-center transition-all active:scale-95 shadow-lg border-2 border-white/50"
           aria-label={isPlaying ? "Pause" : "Play"}
         >
           {isPlaying ? (
