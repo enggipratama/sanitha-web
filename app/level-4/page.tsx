@@ -15,7 +15,7 @@ interface PuzzlePiece {
   currentPos: number;
   correctPos: number;
 }
-const { TITLE } = GAME_CONFIG.LEVEL_3;
+const { TITLE } = GAME_CONFIG.LEVEL_4;
 const GRID_SIZE = 3;
 const TOTAL_PIECES = GRID_SIZE * GRID_SIZE;
 const PHOTO_URL = "/images/we.jpeg";
@@ -162,7 +162,7 @@ const LevelFour: React.FC = () => {
 
         <p className="text-center max-w-md text-[#D5CEA3]/50 px-4 text-sm mb-2 font-medium opacity-80">
           {isSolved
-            ? "Kamu berhasil menyatukan kepingan kenangan kita! 😍"
+            ? "Kakak berhasil menyatukan kepingan kenangan kita! 😍"
             : "Klik dua kotak untuk menukar posisinya hingga fotonya benar."}
         </p>
 

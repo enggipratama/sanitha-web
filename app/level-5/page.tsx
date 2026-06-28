@@ -8,7 +8,8 @@ import ProtectedLevel from "@/components/ProtectedLevel";
 import ShinyText from "@/components/ShinyText";
 import { setLevelCompleted } from "@/utils/progress";
 import { GAME_CONFIG, COLORS } from "@/constants/game";
-import { FaCat, FaBomb, FaHeart, FaHeartBroken, FaClock } from "react-icons/fa";
+import { FaBomb, FaHeart, FaHeartBroken, FaClock } from "react-icons/fa";
+import MyPhoto from "@/public/cat/catchme.png";
 
 const { BOX_COUNT, TIME_LIMIT, TARGET_SCORE, MAX_LIVES, TITLE } = GAME_CONFIG.LEVEL_5;
 
@@ -181,7 +182,7 @@ const LevelFive: React.FC = () => {
         </div>
 
         <ShinyText
-          text={isWin ? "Sayang Hebat banget! 😻" : `${TITLE} ✨`}
+          text={isWin ? "Sayang Hebat banget!" : `${TITLE} ✨`}
           speed={2}
           delay={0}
           color={COLORS.PRIMARY}
@@ -195,14 +196,14 @@ const LevelFive: React.FC = () => {
         />
 
         <p className="text-center max-w-md text-[#D5CEA3]/50 px-4 text-sm mb-2 font-medium">
-          {isWin ? "Kamu berhasil menangkap kucingnya! 😍" : "Tangkap Kucing dan hindari BOM!"}
+          {isWin ? "Kakak berhasil menangkap aku! 😍" : "Tangkap aku dan hindari BOM-nya!"}
         </p>
 
         <div className="bg-[#D5CEA3]/50 backdrop-blur-xl p-3 rounded-2xl shadow-2xl border border-[#D5CEA3]/50 w-full max-w-fit">
           <p className="text-center text-[#1A120B] text-sm mb-2 px-2">
             <span className="flex justify-center items-center gap-2">
-              Tangkap <FaCat className="text-[#1A120B]" /> dan hindari{" "}
-              <FaBomb className="text-gray-700" />
+              Tangkap <img src={MyPhoto.src} alt="My Photo" className="w-5 h-5 rounded-full border-2 border-[#1A120B]/60 object-cover"/> dan hindari{""}
+              <FaBomb className="text-[#1A120B]" />
             </span>
           </p>
 
@@ -239,16 +240,16 @@ const LevelFive: React.FC = () => {
                     flashIndex === index && flashType === "bomb"
                       ? "bg-red-400"
                       : flashIndex === index && flashType === "cat"
-                        ? "bg-green-200"
-                        : "bg-white hover:bg-pink-50"
+                        ? "bg-green-300"
+                        : "bg-[#D5CEA3] hover:bg-[#D5CEA3]/50"
                   }
                 `}
               >
                 {activeBox === index && (
-                  <FaCat className="text-blue-500 text-lg drop-shadow-lg animate-bounce" />
+                  <img src={MyPhoto.src} alt="My Photo" className="w-6 h-6 sm:w-7 sm:h-7 rounded-2xl border-1 border-[#1A120B] object-cover" />
                 )}
                 {bombBox === index && (
-                  <FaBomb className="text-gray-700 text-lg drop-shadow-lg animate-pulse" />
+                  <FaBomb className="text-[#1A120B] w-6 h-6 sm:w-7 sm:h-7 text-lg drop-shadow-lg animate-pulse" />
                 )}
               </div>
             ))}
@@ -286,7 +287,7 @@ const LevelFive: React.FC = () => {
           <div className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm z-50">
             <div className="bg-[#D5CEA3]/90 rounded-2xl shadow-xl p-5 w-[85%] max-w-[260px] text-center animate-scalePulse">
               <p className="text-lg font-bold text-[#3C2A21] mb-1">
-                Kamu Kalah, Cupu!
+                Kakak Kalah, Cupu!
               </p>
               <p className="text-xs text-gray-600 mb-3 flex justify-center items-center gap-2">
                 {lives <= 0 ? (

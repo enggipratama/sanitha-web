@@ -101,7 +101,7 @@ const LevelThree: React.FC = () => {
         </div>
 
         <ShinyText
-          text={isGameWon ? "Yeeyy kamu nemuin aku! ❤️" : `${TITLE} ✨`}
+          text={isGameWon ? "Yeeyy kakak nemuin aku! ❤️" : `${TITLE} ✨`}
           speed={2}
           delay={0}
           color={COLORS.PRIMARY}
@@ -115,7 +115,7 @@ const LevelThree: React.FC = () => {
         />
 
         <p className="text-center max-w-md text-[#D5CEA3]/50 px-4 text-sm mb-2 font-medium">
-          {isGameWon ? "Kamu berhasil menemukan aku! 🎉" : "Gunakan WASD atau tombol panah untuk bertemu!"}
+          {isGameWon ? "Kakak berhasil menemukan aku! 🎉" : "Gunakan WASD atau tombol panah untuk bertemu!"}
         </p>
 
         <div className="bg-[#D5CEA3]/50 backdrop-blur-md p-2 rounded-2xl shadow-2xl border border-[#E5E5CB]/40 mb-2">
@@ -138,7 +138,7 @@ const LevelThree: React.FC = () => {
                   {playerPos.x === x && playerPos.y === y && (
                     <div className="absolute inset-0 flex items-center justify-center text-lg">
                       <Image
-                        src="/images/1.png"
+                        src="/images/5.png"
                         alt="Player"
                         fill
                         className="rounded-full border border-[#1A120B] object-cover"
@@ -152,7 +152,7 @@ const LevelThree: React.FC = () => {
                   {TARGET_POS.x === x && TARGET_POS.y === y && (
                     <div className="absolute inset-0 flex items-center justify-center">
                       <Image
-                        src="/images/5.png"
+                        src="/images/1.png"
                         alt="Target"
                         fill
                         className="rounded-full border border-[#1A120B] object-cover"

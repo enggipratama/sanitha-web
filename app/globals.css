@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #1A120B;
   --foreground: #000000;
 }
 
@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #000000;
+    --background: #1A120B;
     --foreground: #ededed;
   }
 }
@@ -23,7 +23,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #040D12;
+  background-color: #1A120B;
   /* background-color: #fbcce1; */
 
   overscroll-behavior: none;
@@ -42,7 +42,7 @@ body {
 }
 .main-container {
   min-height: 100dvh;
-  background: linear-gradient(to bottom, #fbcce1, #f8a5c2);
+  background: linear-gradient(to bottom, #1A120B, #1A120B);
   display: flex;
   flex-direction: column;
 }
@@ -144,7 +144,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #fbcce1;
+  background-color: #1A120B;
   position: relative;
   overflow: hidden;
   padding-left: 1rem;
@@ -157,7 +157,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #fbcce1;
+  background-color: #1A120B;
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
@@ -180,7 +180,7 @@ body {
   padding: 0.5rem 1rem;
   font-size: 0.75rem;
   font-weight: 700;
-  background-color: #ec4899;
+  background-color: #1A120B;
   color: white;
   border-radius: 0.75rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -188,7 +188,7 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: #db2777;
+  background-color: #1A120B;
 }
 
 .btn-primary:active {
@@ -199,7 +199,7 @@ body {
   padding: 0.5rem 1rem;
   font-size: 0.75rem;
   font-weight: 700;
-  background-color: #f472b6;
+  background-color: #1A120B;
   color: white;
   border-radius: 0.75rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -207,7 +207,7 @@ body {
 }
 
 .btn-secondary:hover {
-  background-color: #ec4899;
+  background-color: #1A120B;
 }
 
 .btn-secondary:active {

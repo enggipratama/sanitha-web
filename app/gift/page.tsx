@@ -53,7 +53,7 @@ export default function Page() {
         <Lottie animationData={cat} loop autoplay />
       </div>
       <ShinyText
-        text="Wiihh tebakan kamu benar, sekarang ambil hadiahnya yaa"
+        text="Wiihh tebakan kakak benar, sekarang ambil hadiahnya yaa sayaang ❤️"
         speed={2}
         delay={0}
         color={COLORS.PRIMARY}

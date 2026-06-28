@@ -12,18 +12,18 @@ export const GAME_CONFIG = {
       "/images/5.png",
       "/images/6.png",
     ],
-    TITLE: "Level 2 — The Memory",
+    TITLE: "Level 2 — Memory Quest",
   },
   LEVEL_3: {
     MAZE_LAYOUT: [
       [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      [1, 0, 0, 1, 1, 0, 0, 0, 0, 1],
+      [1, 0, 0, 0, 1, 0, 1, 1, 0, 1],
+      [1, 1, 1, 0, 0, 0, 1, 0, 0, 1],
+      [1, 0, 1, 1, 1, 1, 0, 0, 1, 1],
       [1, 0, 0, 0, 1, 0, 0, 0, 0, 1],
-      [1, 0, 1, 0, 1, 0, 1, 1, 0, 1],
-      [1, 1, 1, 0, 0, 0, 1, 1, 0, 1],
-      [1, 0, 1, 1, 1, 1, 0, 1, 0, 1],
-      [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-      [1, 1, 0, 1, 1, 1, 1, 1, 1, 1],
-      [1, 0, 0, 0, 1, 0, 0, 1, 0, 1],
+      [1, 1, 1, 0, 0, 0, 1, 1, 1, 1],
+      [1, 0, 0, 0, 1, 1, 0, 1, 0, 1],
       [1, 0, 1, 0, 0, 0, 0, 0, 0, 1],
       [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     ],
@@ -34,14 +34,14 @@ export const GAME_CONFIG = {
   LEVEL_4: {
     GRID_SIZE: 3,
     PHOTO_URL: "/images/we.jpeg",
-    TITLE: "Level 4 — Puzzle",
+    TITLE: "Level 4 — Complete Us",
   },
   LEVEL_5: {
-    BOX_COUNT: 16,
-    TIME_LIMIT: 15,
-    TARGET_SCORE: 10,
+    BOX_COUNT: 20,
+    TIME_LIMIT: 30,
+    TARGET_SCORE: 20,
     MAX_LIVES: 3,
-    TITLE: "Level 5 — Catch Cat",
+    TITLE: "Level 5 — Catch Me",
   },
   LEVEL_6: {
     WORDS: [
@@ -67,12 +67,12 @@ export const GAME_CONFIG = {
       "KEBERSAMAAN",
     ],
     TIME_LIMIT: 30,
-    WORD_COUNT: 10,
-    TITLE: "Level 6 — Susun Kata",
+    WORD_COUNT: 15,
+    TITLE: "Level 6 — Hidden Words",
   },
   LEVEL_7: {
     PIN_LENGTH: 4,
-    TITLE: "Safe Box",
+    TITLE: "Secret Box",
   },
 };
 

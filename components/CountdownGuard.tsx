@@ -125,14 +125,14 @@ export default function CountdownGuard({
         {!isFinalMode && (
           <div className="relative z-10 flex flex-col items-center justify-center">
             <div className="relative w-[70vw] max-w-[320px] aspect-[1081/648]">
-  <Image
-    src={cat}
-    alt="Couple"
-    fill
-    className="object-contain"
-    priority
-  />
-</div>
+              <Image
+                src={cat}
+                alt="Couple"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
             <ShinyText
               text="Tunggu dulu Yaa..."
               speed={2}

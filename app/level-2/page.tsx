@@ -143,7 +143,7 @@ const LevelTwo: React.FC = () => {
         />
 
         <p className="text-center max-w-md text-[#D5CEA3]/50 px-4 text-sm sm:text-sm mb-2 font-medium">
-          {isGameWon ? "Yeay! Kamu hebat banget! 😍" : "Cari pasangan foto kita !"}
+          {isGameWon ? "Yeay! Kakak hebat banget! 😍" : "Cari pasangan foto kita !"}
         </p>
 
         <div className="bg-[#D5CEA3]/50 backdrop-blur-xl p-2 sm:p-3 rounded-2xl shadow-2xl border border-[#E5E5CB]/40">
