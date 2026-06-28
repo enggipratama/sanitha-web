@@ -262,7 +262,7 @@ const LevelSix: React.FC = () => {
         </div>
 
         <ShinyText
-          text={isWin ? "Pintar banget sih kamu 💖" : `${TITLE} ✨`}
+          text={isWin ? "Pintar banget sih kakak 💖" : `${TITLE} ✨`}
           speed={2}
           delay={0}
           color={COLORS.PRIMARY}
@@ -276,7 +276,7 @@ const LevelSix: React.FC = () => {
         />
 
         <p className="text-center max-w-md text-[#D5CEA3]/50 px-4 text-xs mb-2 font-medium">
-          {isWin ? "Kamu berhasil menyusun semua kata cinta ❤️" : `Susun huruf menjadi kata yang benar! (${level + 1}/${shuffledWords.length})`}
+          {isWin ? "Kakak berhasil menyusun semua kata cinta ❤️" : `Susun huruf menjadi kata yang benar! (${level + 1}/${shuffledWords.length})`}
         </p>
 
         <div className="flex gap-4 mb-2 text-xs font-semibold text-[#D5CEA3]/50 items-center">
@@ -361,7 +361,7 @@ const LevelSix: React.FC = () => {
           <div className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm z-50">
             <div className="bg-[#D5CEA3]/90 rounded-2xl shadow-xl p-5 w-[85%] max-w-[260px] text-center animate-scalePulse">
               <p className="text-lg font-bold text-[#3C2A21] mb-1">
-                Kamu Kalah, Cupu!
+                Kakak Kalah, Cupu!
               </p>
               <p className="text-xs text-gray-600 mb-3">
                 Mulai lagi dari awal ya ❤️

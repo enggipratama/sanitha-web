@@ -27,22 +27,34 @@ const MusicPlayer: React.FC = () => {
     const intervalTime = fadeDuration / (1 / step);
     
     audio.volume = 0;
-    audio.play();
-    isFadingRef.current = true;
-    fadeIntervalRef.current = setInterval(() => {
-      if (audio.volume < 1) {
-        audio.volume = Math.min(audio.volume + step, 1);
-      } else {
-        stopFade();
-      }
-    }, intervalTime);
+    const playPromise = audio.play();
+    
+    // Handle autoplay policy - play might fail silently
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          setIsPlaying(true);
+          isFadingRef.current = true;
+          fadeIntervalRef.current = setInterval(() => {
+            if (audio.volume < 1) {
+              audio.volume = Math.min(audio.volume + step, 1);
+            } else {
+              stopFade();
+            }
+          }, intervalTime);
+        })
+        .catch((error) => {
+          console.log("Autoplay prevented by browser:", error);
+          // Autoplay was prevented, user needs to click play button
+          // Don't set isPlaying to true, keep the bubble visible
+        });
+    }
   }, [stopFade]);
 
   useEffect(() => {
     const handleCountdownFinished = () => {
       if (audioRef.current) {
         fadeIn();
-        setIsPlaying(true);
       }
     };
 
@@ -66,10 +78,10 @@ const MusicPlayer: React.FC = () => {
     if (isPlaying) {
       audioRef.current.pause();
       audioRef.current.volume = 1;
+      setIsPlaying(false);
     } else {
       fadeIn();
     }
-    setIsPlaying(!isPlaying);
   }, [isPlaying, fadeIn, stopFade]);
 
   return (
@@ -78,20 +90,31 @@ const MusicPlayer: React.FC = () => {
         ref={audioRef}
         src="/audio/music.mp3"
         loop
+        preload="auto"
         onEnded={() => setIsPlaying(false)}
       />
       {!isLoading && (
-        <button
-          onClick={togglePlay}
-          className="bg-[#D5CEA3] hover:bg-[#E5E5CB] text-[#3C2A21] w-12 h-12 rounded-full flex items-center justify-center transition-all active:scale-95 shadow-lg border-2 border-white/50"
-          aria-label={isPlaying ? "Pause" : "Play"}
-        >
-          {isPlaying ? (
-            <Pause size={20} fill="currentColor" />
-          ) : (
-            <Play size={20} fill="currentColor" />
+        <>
+          {!isPlaying && (
+            <div className="absolute bottom-15 right-0 animate-bubbleContinuous">
+              <div className="bg-[#D5CEA3] text-[#3C2A21] font-bold px-3 py-1 rounded-lg text-sm font-medium shadow-lg relative whitespace-nowrap max-w-[calc(100vw-6rem)] sm:max-w-xs">
+                Play Music
+                <div className="absolute top-full right-4 w-0 h-0 border-t-8 border-t-[#D5CEA3] border-x-8 border-x-transparent"></div>
+              </div>
+            </div>
           )}
-        </button>
+          <button
+            onClick={togglePlay}
+            className="bg-[#D5CEA3] hover:bg-[#E5E5CB] text-[#3C2A21] w-12 h-12 rounded-full flex items-center justify-center transition-all active:scale-95 shadow-lg border-2 border-white/50"
+            aria-label={isPlaying ? "Pause" : "Play"}
+          >
+            {isPlaying ? (
+              <Pause size={20} fill="currentColor" />
+            ) : (
+              <Play size={20} fill="currentColor" />
+            )}
+          </button>
+        </>
       )}
     </div>
   );

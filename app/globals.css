@@ -137,6 +137,43 @@ body {
   animation: shake 0.3s ease-in-out;
 }
 
+@keyframes bubblePulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-bubblePulse {
+  animation: bubblePulse 0.6s ease-in-out;
+}
+
+@keyframes bubbleContinuous {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+.animate-bubbleContinuous {
+  animation: bubbleContinuous 2s ease-in-out infinite;
+}
+
 .level-page {
   min-height: 100dvh;
   width: 100%;

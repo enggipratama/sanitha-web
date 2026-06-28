@@ -129,7 +129,7 @@ export default function LevelOne() {
         />
 
         <p className="text-center max-w-md text-[#D5CEA3]/50 px-4 text-sm mb-3 font-medium">
-          {isCorrect ? "You made me happy!" : "Answer correctly to make me happy!"}
+          {isCorrect ? "Syukurlah masih ingat !" : "Answer correctly to make me happy!"}
         </p>
 
         <motion.div

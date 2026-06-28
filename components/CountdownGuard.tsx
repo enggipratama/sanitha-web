@@ -134,7 +134,7 @@ export default function CountdownGuard({
               />
             </div>
             <ShinyText
-              text="Tunggu dulu Yaa..."
+              text="Sabar dulu Yaa..."
               speed={2}
               color="#D5CEA3"
               shineColor="#E5E5CB"
