@@ -13,7 +13,11 @@ import TextType from "@/components/TextType";
 import { useMounted } from "@/hooks/useMounted";
 import { useConfetti } from "@/hooks/useConfetti";
 import { COLORS } from "@/constants/game";
-
+const birthdayMessage = `Selamat bertambah usia yaa....
+Semoga di usia yang baru ini kakak selalu diberi kesehatan, umur yang panjang, hati yang bahagia, dan setiap langkahnya selalu dimudahkan.
+Semoga rezekinya dilancarkan, dipertemukan dengan banyak hal baik, dikelilingi orang-orang baik, selalu dalam perlindungan Tuhan, serta semua doa dan harapan kakak bisa terwujud satu per satu....
+Astungkara 😇
+Untuk sementara hadiah ini jadi perwakilan doa dan kehadiran Sanitha di hari bahagia kakak yaa.......`;
 interface Props {
   pages: string[];
 }
@@ -28,7 +32,7 @@ function FlipbookPage({ src, index }: PageProps) {
 
   if (hasError) {
     return (
-      <div className="flex flex-col justify-center items-center w-full h-full bg-pink-200 text-pink-600 p-4">
+      <div className="flex flex-col justify-center items-center w-full h-full bg-[#D5CEA3] text-gray-600 p-4">
         <p className="text-center font-bold">Gambar tidak dapat dimuat</p>
         <p className="text-sm text-center">Halaman {index + 1}</p>
       </div>
@@ -91,7 +95,7 @@ export default function FlipbookModal({ pages }: Props) {
           )}
           <button
             onClick={() => setIsOpen(false)}
-            className="fixed top-5 right-5 text-[#D5CEA3] text-3xl font-bold z-50 hover:text-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-300 rounded"
+            className="fixed top-5 right-5 text-[#D5CEA3] text-3xl font-bold z-50 hover:text-pink-700 focus:outline-none focus:ring-2 focus:ring-[#1A120B]/70 rounded"
             aria-label="Tutup"
           >
             &times;
@@ -153,21 +157,19 @@ export default function FlipbookModal({ pages }: Props) {
                 <Lottie animationData={cat} loop autoplay />
               </div>
               <h3 className="text-lg font-bold text-[#3C2A21] mb-2">
-                Selamat Menua! 🎂 🎉
+              Haii sayanggg, it&quot;s your dayyyy! ❤️🥳
               </h3>
               <div className="text-sm leading-relaxed italic">
-                <TextType
-                  text={[
-                    "Akhirnya sampai di level terakhir dan berhasil sampai sini, pinter juga yaaa 😜. Aku sengaja bikin website ini biar kamu mengingat sedikit momen kita hehe. Di hari ulang tahunmu ini, aku mau ngucapin terima kasih karena kamu sudah menjadi salah satu alasan aku untuk terus belajar dan berkembang, termasuk belajar membuat website ini hanya untuk melihat senyummu, anjayyyy 🤙. Kamu adalah sistem pendukung terbaik, pendengar yang sabar, dan pemilik senyum yang selalu bisa menenangkan duniaku, anjayyy part 2 ✌️. Semoga dengan bertambahnya usia ini, kamu selalu dikelilingi oleh orang-orang yang tulus menyayangimu, diberikan kesehatan yang luar biasa, dan setiap impian yang kamu bisikkan dalam doa segera menjadi nyata. Jangan pernah ragu dengan kemampuanmu, karena bagiku, kamu adalah orang yang hebat. Aku akan selalu ada di sini, di setiap level kehidupanmu selanjutnya, untuk mendukungmu dan mencintaimu lebih dari hari ini. Selamat ulang tahun, Cantik. I love you more than words, code, and everything in between.",
-                  ]}
-                  typingSpeed={75}
-                  pauseDuration={120000}
-                  showCursor
-                  cursorCharacter="_"
-                />
+              <TextType
+                    text={[birthdayMessage]}
+                    typingSpeed={75}
+                    pauseDuration={120000}
+                    showCursor
+                    cursorCharacter="_"
+                  />
               </div>
               <p className="mt-4 font-bold text-[#3C2A21]">
-                - Sanitha -
+                - Love you sayanggg❤️ -
               </p>
             </div>
           </div>
