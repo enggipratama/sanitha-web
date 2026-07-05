@@ -26,7 +26,7 @@ const MusicPlayer: React.FC = () => {
     const fadeDuration = 1500;
     const intervalTime = fadeDuration / (1 / step);
     
-    audio.volume = 0;
+    audio.volume = 1;
     const playPromise = audio.play();
     
     // Handle autoplay policy - play might fail silently
